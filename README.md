@@ -1,5 +1,5 @@
 # Tensor Type
-[![PyPI version](https://badge.fury.io/py/tensor_type.svg)](https://badge.fury.io/py/tensor_type)
+[![PyPI version](https://badge.fury.io/py/tensor-type.svg)](https://badge.fury.io/py/tensor-type)
 
 Annotates shapes of PyTorch Tensors using type annotation in Python3, and provides optional runtime shape validation.
 
