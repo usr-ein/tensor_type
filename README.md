@@ -41,6 +41,9 @@ assert Tensor[3, 2, 4](t)
 # This will match no matter the size of the second axis
 assert Tensor[3, :, 4](t)
 
+# This will match only tensors with size from 1 to 4 for the second axis
+assert Tensor[3, 1:5, 4](t)
+
 batch = 64
 channels = 3
 h, w = 256, 512
