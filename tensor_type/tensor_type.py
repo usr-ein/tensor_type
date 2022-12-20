@@ -82,8 +82,11 @@ class _Tensor:
 
         for real_dim, type_dim in zip(x.shape, cls.type_shape):
             if isinstance(type_dim, slice):
-                continue
-            valid &= real_dim == type_dim
+                valid &= type_dim.start is None or real_dim >= type_dim.start       # check if within bounds ...
+                valid &= type_dim.stop is None  or real_dim < type_dim.stop         # excluding stop, as usual
+                valid &= type_dim.step is None  or real_dim % type_dim.step == 0    # within start:stop:step 
+            else:
+                valid &= real_dim == type_dim
 
         return valid
 
